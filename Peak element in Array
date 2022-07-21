@@ -1,0 +1,32 @@
+class Solution
+{
+    public:
+    int peakElement(int arr[], int n)
+    {
+       // Your code here
+       
+     int res = 0;
+     
+    //   checking larger element by checcking all of them once
+    
+    
+    // CHECKING FOR LAST ELEMENT
+        
+        if(arr[n-1]> arr[n-2])  {
+            return n-1;
+        }
+    
+    // CHECKING FOR FIRST ELEMENT
+    
+        if(arr[0]>arr[1]){
+            return 0;
+        }
+        
+        // CHECCKING FOR THE ELEMENT BETWEEN 1 TO N-2
+        
+         for(int i=1; i<n-2; i++){
+             if(arr[i] > arr[i+1]  && arr[i]>arr[i-1] )
+             return i ;
+         }
+        }
+};
